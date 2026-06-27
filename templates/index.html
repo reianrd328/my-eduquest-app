@@ -1,87 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduQuest | Free Grade 1-6 Practice Tests</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+<!-- ADD THIS INSIDE YOUR GRADE SELECTION CARD OR ABOVE THE BUTTONS -->
+<div id="name-screen" style="margin-bottom: 20px; text-align: center;">
+    <label for="player-name" style="font-weight: bold; color: #fff; display: block; margin-bottom: 8px;">Enter Your Name Hero: </label>
+    <input type="text" id="player-name" placeholder="Type your name here..." style="padding: 10px; border-radius: 8px; border: none; font-size: 16px; width: 80%; max-width: 300px; text-align: center;">
+</div>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>🚀 Welcome to EduQuest!</h1>
-            <p>Level up your brain power with our fun, 100% free practice tests!</p>
-        </div>
-    </header>
+<!-- UPDATE YOUR SCORE SCREEN BLOCK TO LOOK LIKE THIS -->
+<div id="score-screen" class="hidden" style="text-align: center;">
+    <h2>Quest Complete! 🎉</h2>
+    <p style="font-size: 20px; color: #fff;">Great job, <span id="display-player-name" style="color: #ffeb3b; font-weight: bold;"></span>!</p>
+    <p style="font-size: 24px;">You scored <span id="final-score">0</span> out of <span id="total-score">20</span>!</p>
+    
+    <hr style="margin: 20px 0; border-color: rgba(255,255,255,0.2);">
+    
+    <h3>🏆 Top 10 Hall of Fame</h3>
+    <table id="leaderboard-table" style="width: 100%; max-width: 400px; margin: 0 auto 20px auto; border-collapse: collapse; background: rgba(0,0,0,0.4); border-radius: 12px; color: #fff;">
+        <thead>
+            <tr style="border-bottom: 2px solid #fff;">
+                <th style="padding: 10px;">Rank</th>
+                <th style="padding: 10px;">Name</th>
+                <th style="padding: 10px;">Grade</th>
+                <th style="padding: 10px;">Score</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+            <!-- Scores will be injected here dynamically -->
+        </tbody>
+    </table>
 
-    <main class="container">
-        <section id="grade-selection">
-            <h2 class="section-title">Pick Your Grade to Start!</h2>
-            <div class="grid-cards">
-                <div class="card grade-1" onclick="startTest(1)">
-                    <div class="icon">🎨</div>
-                    <h3>Grade 1</h3>
-                    <p>Fun with Shapes & Counting</p>
-                </div>
-                <div class="card grade-2" onclick="startTest(2)">
-                    <div class="icon">🦁</div>
-                    <h3>Grade 2</h3>
-                    <p>Basic Words & Math Fun</p>
-                </div>
-                <div class="card grade-3" onclick="startTest(3)">
-                    <div class="icon">🚀</div>
-                    <h3>Grade 3</h3>
-                    <p>Explore Nature & Fractions</p>
-                </div>
-                <div class="card grade-4" onclick="startTest(4)">
-                    <div class="icon">🧪</div>
-                    <h3>Grade 4</h3>
-                    <p>Science Quizzes & Multipliers</p>
-                </div>
-                <div class="card grade-5" onclick="startTest(5)">
-                    <div class="icon">🗺️</div>
-                    <h3>Grade 5</h3>
-                    <p>History Adventures & Decimals</p>
-                </div>
-                <div class="card grade-6" onclick="startTest(6)">
-                    <div class="icon">🌌</div>
-                    <h3>Grade 6</h3>
-                    <p>Space Math & Grammar Masters</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="test-arena" class="hidden">
-            <div class="test-header">
-                <button class="btn-back" onclick="goBack()">⬅ Back</button>
-                <h2 id="arena-title">Grade Test</h2>
-                <div class="progress-container">
-                    <div id="progress-bar"></div>
-                </div>
-            </div>
-
-            <div class="quiz-box">
-                <div id="question-text">Question loading...</div>
-                <div id="options-container" class="options-grid"></div>
-            </div>
-            
-            <button id="next-btn" class="btn-next hidden" onclick="nextQuestion()">Next Question ➔</button>
-        </section>
-
-        <section id="score-screen" class="hidden">
-            <div class="result-card">
-                <h2>🎉 Amazing Effort! 🎉</h2>
-                <p>You finished your quiz quest!</p>
-                <div class="score-badge">
-                    <span id="final-score">0</span> / <span id="total-score">0</span>
-                </div>
-                <button class="btn-retry" onclick="goBack()">Play Another Grade!</button>
-            </div>
-        </section>
-    </main>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
-</html>
+    <button class="option-btn" onclick="goBack()" style="background: #4caf50; width: auto; padding: 10px 30px;">Play Again 🔄</button>
+</div>
