@@ -1,31 +1,113 @@
-<!-- ADD THIS INSIDE YOUR GRADE SELECTION CARD OR ABOVE THE BUTTONS -->
-<div id="name-screen" style="margin-bottom: 20px; text-align: center;">
-    <label for="player-name" style="font-weight: bold; color: #fff; display: block; margin-bottom: 8px;">Enter Your Name Hero: </label>
-    <input type="text" id="player-name" placeholder="Type your name here..." style="padding: 10px; border-radius: 8px; border: none; font-size: 16px; width: 80%; max-width: 300px; text-align: center;">
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest - Interactive Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=1">
+</head>
+<body>
 
-<!-- UPDATE YOUR SCORE SCREEN BLOCK TO LOOK LIKE THIS -->
-<div id="score-screen" class="hidden" style="text-align: center;">
-    <h2>Quest Complete! 🎉</h2>
-    <p style="font-size: 20px; color: #fff;">Great job, <span id="display-player-name" style="color: #ffeb3b; font-weight: bold;"></span>!</p>
-    <p style="font-size: 24px;">You scored <span id="final-score">0</span> out of <span id="total-score">20</span>!</p>
-    
-    <hr style="margin: 20px 0; border-color: rgba(255,255,255,0.2);">
-    
-    <h3>🏆 Top 10 Hall of Fame</h3>
-    <table id="leaderboard-table" style="width: 100%; max-width: 400px; margin: 0 auto 20px auto; border-collapse: collapse; background: rgba(0,0,0,0.4); border-radius: 12px; color: #fff;">
-        <thead>
-            <tr style="border-bottom: 2px solid #fff;">
-                <th style="padding: 10px;">Rank</th>
-                <th style="padding: 10px;">Name</th>
-                <th style="padding: 10px;">Grade</th>
-                <th style="padding: 10px;">Score</th>
-            </tr>
-        </thead>
-        <tbody id="leaderboard-body">
-            <!-- Scores will be injected here dynamically -->
-        </tbody>
-    </table>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>EduQuest Learning Arena 🚀</h1>
+            <p>Select a grade level quest to challenge your skills!</p>
+        </header>
 
-    <button class="option-btn" onclick="goBack()" style="background: #4caf50; width: auto; padding: 10px 30px;">Play Again 🔄</button>
-</div>
+        <main class="content-arena">
+            
+            <section id="grade-selection" class="grade-grid">
+                
+                <div class="name-entry-box" style="grid-column: 1 / -1; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 16px; margin-bottom: 15px; text-align: center; border: 2px dashed rgba(255,255,255,0.2);">
+                    <label for="player-name" style="font-weight: bold; color: #fff; display: block; margin-bottom: 10px; font-size: 1.1rem; letter-spacing: 0.5px;">⭐ ENTER YOUR HERO NAME:</label>
+                    <input type="text" id="player-name" placeholder="Type name here..." style="padding: 12px 20px; border-radius: 8px; border: none; font-size: 16px; width: 80%; max-width: 300px; text-align: center; outline: none; font-weight: bold; color: #333;">
+                </div>
+
+                <div class="grade-card purple" onclick="startTest(1)">
+                    <div class="card-icon">🎨</div>
+                    <h2>Grade 1 Quest</h2>
+                    <p>Math, Phonics, Shapes & Phonics Essentials</p>
+                </div>
+
+                <div class="grade-card blue" onclick="startTest(2)">
+                    <div class="card-icon">⏰</div>
+                    <h2>Grade 2 Quest</h2>
+                    <p>Place Values, Time & Living Systems</p>
+                </div>
+
+                <div class="grade-card green" onclick="startTest(3)">
+                    <div class="card-icon">🧭</div>
+                    <h2>Grade 3 Quest</h2>
+                    <p>Multiplication, Fractions & Earth Sciences</p>
+                </div>
+
+                <div class="grade-card orange" onclick="startTest(4)">
+                    <div class="card-icon">📐</div>
+                    <h2>Grade 4 Quest</h2>
+                    <p>Geometry, Adverbs & Government Foundations</p>
+                </div>
+
+                <div class="grade-card red" onclick="startTest(5)">
+                    <div class="card-icon">🦴</div>
+                    <h2>Grade 5 Quest</h2>
+                    <p>Decimals, Skeletal Anatomy & Global History</p>
+                </div>
+
+                <div class="grade-card dark-purple" onclick="startTest(6)">
+                    <div class="card-icon">🧬</div>
+                    <h2>Grade 6 Quest</h2>
+                    <p>Algebra, Cells, Physics & Economic Markets</p>
+                </div>
+            </section>
+
+            <section id="test-arena" class="quiz-card hidden">
+                <div class="quiz-header">
+                    <h2 id="arena-title">Quest Active!</h2>
+                    <div class="progress-track">
+                        <div id="progress-bar" class="progress-fill"></div>
+                    </div>
+                </div>
+                
+                <div class="quiz-body">
+                    <p id="question-text" class="question-prompt">Loading challenge...</p>
+                    <div id="options-container" class="options-layout-grid">
+                        </div>
+                </div>
+
+                <div class="quiz-footer">
+                    <button id="next-btn" class="action-btn hidden" onclick="nextQuestion()">Next Challenge ➡️</button>
+                </div>
+            </section>
+
+            <section id="score-screen" class="quiz-card hidden" style="text-align: center; padding: 30px;">
+                <h2 style="font-size: 2.2rem; color: #ffeb3b; margin-bottom: 10px;">Quest Complete! 🎉</h2>
+                <p style="font-size: 1.3rem; color: #fff; margin-bottom: 5px;">Awesome job, <span id="display-player-name" style="color: #00e5ff; font-weight: bold;">Player</span>!</p>
+                <p style="font-size: 1.4rem; color: #fff; margin-bottom: 25px;">Final Score: <span id="final-score" style="font-weight: bold; color: #4caf50;">0</span> / <span id="total-score">20</span></p>
+                
+                <hr style="margin: 25px 0; border: 0; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                
+                <h3 style="color: #ffeb3b; margin-bottom: 15px; font-size: 1.5rem; letter-spacing: 1px;">🏆 TOP 10 LEADERBOARD</h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; max-width: 450px; margin: 0 auto 30px auto; border-collapse: collapse; background: rgba(0, 0, 0, 0.3); border-radius: 8px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: rgba(255, 255, 255, 0.1); border-bottom: 2px solid rgba(255,255,255,0.2); color: #fff;">
+                                <th style="padding: 12px; font-size: 14px;">Rank</th>
+                                <th style="padding: 12px; font-size: 14px; text-align: left;">Name</th>
+                                <th style="padding: 12px; font-size: 14px;">Grade</th>
+                                <th style="padding: 12px; font-size: 14px;">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body" style="color: #eee;">
+                            </tbody>
+                    </table>
+                </div>
+
+                <button class="action-btn" onclick="goBack()" style="background: #4caf50; display: inline-block; width: auto; padding: 12px 40px; font-size: 16px; border-radius: 8px;">Play Another Quest 🔄</button>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="/static/js/script.js?v=2"></script>
+</body>
+</html>
