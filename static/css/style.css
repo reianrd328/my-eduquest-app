@@ -19,7 +19,13 @@ body {
 
 .hidden { display: none !important; }
 
-.hero {
+.dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.dashboard-header {
     background: linear-gradient(135deg, #6c5ce7, #a29bfe);
     color: white;
     text-align: center;
@@ -27,53 +33,67 @@ body {
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     box-shadow: 0 8px 24px rgba(108, 92, 231, 0.2);
-}
-.hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
-.hero p { font-size: 1.3rem; opacity: 0.9; }
-
-.container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2rem;
     margin-bottom: 2rem;
-    color: #4834d4;
+}
+.dashboard-header h1 { font-size: 2.8rem; margin: 0 0 0.5rem 0; }
+.dashboard-header p { font-size: 1.3rem; margin: 0; opacity: 0.9; }
+
+.name-entry-box {
+    background: white !important;
+    padding: 20px;
+    border-radius: 24px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+.name-entry-box label {
+    color: #6c5ce7 !important;
+}
+.name-entry-box input {
+    border: 2px solid #ced6e0 !important;
+    background-color: #f1f2f6;
 }
 
-.grid-cards {
+.grade-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-.card {
+.grade-card {
     border-radius: 24px;
     padding: 2rem;
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-    color: #2d3436;
 }
-.card:hover {
+.grade-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 12px 20px rgba(0,0,0,0.1);
 }
-.card .icon { font-size: 3.5rem; margin-bottom: 1rem; }
-.card h3 { font-size: 1.6rem; margin: 0; }
+.grade-card .card-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+.grade-card h2 { font-size: 1.6rem; margin: 0 0 0.5rem 0; }
+.grade-card p { margin: 0; opacity: 0.9; font-size: 1rem; }
 
-.grade-1 { background-color: var(--card-g1); color: white; }
-.grade-2 { background-color: var(--card-g2); color: white; }
-.grade-3 { background-color: var(--card-g3); color: white; }
-.grade-4 { background-color: var(--card-g4); color: #2d3436; }
-.grade-5 { background-color: var(--card-g5); color: #2d3436; }
-.grade-6 { background-color: var(--card-g6); color: white; }
+/* Dynamic Grade Colors mapped to your custom dashboard colors */
+.grade-grid .grade-card:nth-of-type(2) { background-color: var(--card-g1); color: white; }
+.grade-grid .grade-card:nth-of-type(3) { background-color: var(--card-g2); color: white; }
+.grade-grid .grade-card:nth-of-type(4) { background-color: var(--card-g3); color: white; }
+.grade-grid .grade-card:nth-of-type(5) { background-color: var(--card-g4); color: #2d3436; }
+.grade-grid .grade-card:nth-of-type(6) { background-color: var(--card-g5); color: #2d3436; }
+.grade-grid .grade-card:nth-of-type(7) { background-color: var(--card-g6); color: white; }
 
-.test-header {
+.quiz-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+.quiz-card h2 { color: #6c5ce7; }
+
+.quiz-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -81,48 +101,34 @@ body {
     flex-wrap: wrap;
     gap: 1rem;
 }
-.btn-back {
-    background: #dfe6e9;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    font-family: var(--primary-font);
-    font-size: 1rem;
-    border-radius: 12px;
-    cursor: pointer;
-}
-.progress-container {
+
+.progress-track {
     width: 200px;
     height: 16px;
     background-color: #dfe6e9;
     border-radius: 10px;
     overflow: hidden;
 }
-#progress-bar {
+.progress-fill {
     width: 0%;
     height: 100%;
     background-color: #00b894;
     transition: width 0.3s ease;
 }
 
-.quiz-box {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 32px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
-}
-#question-text {
+.question-prompt {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 2rem;
     text-align: center;
 }
-.options-grid {
+
+.options-layout-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
-@media(max-width: 600px) { .options-grid { grid-template-columns: 1fr; } }
+@media(max-width: 600px) { .options-layout-grid { grid-template-columns: 1fr; } }
 
 .option-btn {
     background-color: #f1f2f6;
@@ -133,15 +139,16 @@ body {
     border-radius: 18px;
     cursor: pointer;
     transition: all 0.15s ease;
+    color: #2d3436;
 }
 .option-btn:hover {
     background-color: #e4e7eb;
     border-color: #a4b0be;
 }
-.option-btn.correct { background-color: #55efc4 !important; border-color: #00b894 !important; color: white; }
-.option-btn.wrong { background-color: #ff7675 !important; border-color: #d63031 !important; color: white; }
+.option-btn.correct { background-color: #55efc4 !important; border-color: #00b894 !important; color: white !important; }
+.option-btn.wrong { background-color: #ff7675 !important; border-color: #d63031 !important; color: white !important; }
 
-.btn-next, .btn-retry {
+.action-btn {
     display: block;
     margin: 2rem auto 0 auto;
     background-color: #6c5ce7;
@@ -153,18 +160,4 @@ body {
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 6px 15px rgba(108,92,231,0.3);
-}
-
-.result-card {
-    text-align: center;
-    background: white;
-    padding: 3rem;
-    border-radius: 32px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-.score-badge {
-    font-size: 3rem;
-    color: #6c5ce7;
-    margin: 1.5rem 0;
-    font-weight: bold;
 }
