@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest | Free Grade 1-6 Practice Tests</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>🚀 Welcome to EduQuest!</h1>
+            <p>Level up your brain power with our fun, 100% free practice tests!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="grade-selection">
+            <h2 class="section-title">Pick Your Grade to Start!</h2>
+            <div class="grid-cards">
+                <div class="card grade-1" onclick="startTest(1)">
+                    <div class="icon">🎨</div>
+                    <h3>Grade 1</h3>
+                    <p>Fun with Shapes & Counting</p>
+                </div>
+                <div class="card grade-2" onclick="startTest(2)">
+                    <div class="icon">🦁</div>
+                    <h3>Grade 2</h3>
+                    <p>Basic Words & Math Fun</p>
+                </div>
+                <div class="card grade-3" onclick="startTest(3)">
+                    <div class="icon">🚀</div>
+                    <h3>Grade 3</h3>
+                    <p>Explore Nature & Fractions</p>
+                </div>
+                <div class="card grade-4" onclick="startTest(4)">
+                    <div class="icon">🧪</div>
+                    <h3>Grade 4</h3>
+                    <p>Science Quizzes & Multipliers</p>
+                </div>
+                <div class="card grade-5" onclick="startTest(5)">
+                    <div class="icon">🗺️</div>
+                    <h3>Grade 5</h3>
+                    <p>History Adventures & Decimals</p>
+                </div>
+                <div class="card grade-6" onclick="startTest(6)">
+                    <div class="icon">🌌</div>
+                    <h3>Grade 6</h3>
+                    <p>Space Math & Grammar Masters</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="test-arena" class="hidden">
+            <div class="test-header">
+                <button class="btn-back" onclick="goBack()">⬅ Back</button>
+                <h2 id="arena-title">Grade Test</h2>
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="quiz-box">
+                <div id="question-text">Question loading...</div>
+                <div id="options-container" class="options-grid"></div>
+            </div>
+            
+            <button id="next-btn" class="btn-next hidden" onclick="nextQuestion()">Next Question ➔</button>
+        </section>
+
+        <section id="score-screen" class="hidden">
+            <div class="result-card">
+                <h2>🎉 Amazing Effort! 🎉</h2>
+                <p>You finished your quiz quest!</p>
+                <div class="score-badge">
+                    <span id="final-score">0</span> / <span id="total-score">0</span>
+                </div>
+                <button class="btn-retry" onclick="goBack()">Play Another Grade!</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
