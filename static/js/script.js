@@ -79,4 +79,257 @@ const testDatabase = {
         { q: "What figure of speech compares two things using 'like' or 'as'?", options: ["A simile", "Metaphor", "Idiom", "Personification"], answer: 0 },
         { q: "Correct the homophone mistake in this sentence: 'I can see there house from here.'", options: ["they're", "their", "here", "sea"], answer: 1 },
         { q: "What is the main message or moral lesson of a story called?", options: ["Plot", "Setting", "Conflict", "The theme."], answer: 3 },
-        { q: "What green pigment do plants use to absorb sunlight during photosynthesis?", options:
+        { q: "What green pigment do plants use to absorb sunlight during photosynthesis?", options: ["Cytoplasm", "Chlorophyll.", "Sap", "Xylem"], answer: 1 },
+        { q: "What type of rock is formed from cooled volcanic lava?", options: ["Sedimentary", "Metamorphic", "Igneous rock.", "Fossil"], answer: 2 },
+        { q: "What path does an electrical current follow to power a device?", options: ["A circuit.", "Wire", "Generator", "Switch"], answer: 0 },
+        { q: "What type of consumer eats both plants and animals?", options: ["Herbivore", "Carnivore", "An omnivore.", "Decomposer"], answer: 2 },
+        { q: "What resource do we classify as 'fossil fuels' (like coal or oil) because they take millions of years to form?", options: ["Renewable", "Non-renewable resources.", "Inexhaustible", "Synthetic"], answer: 1 },
+        { q: "What document, signed in 1776, declared the American colonies free from British rule?", options: ["The Constitution", "The Bill of Rights", "The Declaration of Independence.", "Magna Carta"], answer: 2 },
+        { q: "What is the capital city of the United States?", options: ["New York", "Washington, D.C.", "Los Angeles", "Philadelphia"], answer: 1 },
+        { q: "What major global water feature covers more than 30% of the Earth's surface?", options: ["Atlantic Ocean", "Indian Ocean", "The Pacific Ocean.", "Arctic Ocean"], answer: 2 },
+        { q: "What do we call a system of government where the people vote to choose their leaders?", options: ["Monarchy", "A democracy.", "Dictatorship", "Oligarchy"], answer: 1 },
+        { q: "What is the name of the long, difficult journey Native Americans were forced to take to Oklahoma in the 1830s?", options: ["The Trail of Tears.", "Oregon Trail", "Great Migration", "Gold Rush"], answer: 0 }
+    ],
+    5: [
+        { q: "Solve: 0.6 × 0.3 = ?", options: ["1.8", "0.18.", "0.018", "18"], answer: 1 },
+        { q: "In the expression 5 × (4 + 2), which operation do you perform first according to the order of operations?", options: ["Multiplication", "Addition inside the parentheses", "Subtraction", "Division"], answer: 1 },
+        { q: "Reduce the fraction 8/12 to its simplest form.", options: ["4/6", "2/3", "3/4", "1/2"], answer: 1 },
+        { q: "How many milliliters are in 2 liters of water?", options: ["200 mL", "2,000 milliliters.", "20,000 mL", "20 mL"], answer: 1 },
+        { q: "What do you call a triangle that has three sides of completely different lengths?", options: ["Isosceles", "Equilateral", "A scalene triangle.", "Right"], answer: 2 },
+        { q: "What part of speech connects words or phrases, like 'and,' 'but,' or 'or'?", options: ["Preposition", "A conjunction.", "Interjection", "Pronoun"], answer: 1 },
+        { q: "What is a metaphor?", options: ["Simile", "A comparison that states one thing is another thing without using 'like' or 'as'", "Hyperbole", "Alliteration"], answer: 1 },
+        { q: "Identify the conjunction in this sentence: 'I wanted to go swimming, but it started raining.'", options: ["swimming", "started", "but", "it"], answer: 2 },
+        { q: "What type of pronoun is used to show ownership, like 'mine,' 'yours,' or 'hers'?", options: ["A possessive pronoun.", "Reflexive pronoun", "Relative pronoun", "Object pronoun"], answer: 0 },
+        { q: "What do we call a word that mimics the sound it represents, like 'buzz' or 'hiss'?", options: ["Idiom", "Personification", "Onomatopoeia.", "Metaphor"], answer: 2 },
+        { q: "What structural system consists of 206 bones that protect our organs and give our body shape?", options: ["Muscular system", "The skeletal system.", "Nervous system", "Circulatory system"], answer: 1 },
+        { q: "Looking at the skeletal diagram above, what is the scientific name for the thigh bone, which is also the longest bone in the body?", options: ["Radius", "The femur.", "Tibia", "Humerus"], answer: 1 },
+        { q: "Which human body system breaks down food so our body can absorb nutrients?", options: ["Respiratory system", "The digestive system.", "Immune system", "Endocrine system"], answer: 1 },
+        { q: "What gas do humans breathe out as waste that plants need to survive?", options: ["Oxygen", "Nitrogen", "Carbon dioxide (CO2).", "Hydrogen"], answer: 2 },
+        { q: "What layer of the Earth is located directly beneath the crust?", options: ["The mantle.", "Inner core", "Outer core", "Atmosphere"], answer: 0 },
+        { q: "What is the supreme law of the United States, written in 1787?", options: ["The US Constitution.", "Declaration of Independence", "Emancipation Proclamation", "Articles of Confederation"], answer: 0 },
+        { q: "What are the first ten amendments to the US Constitution called?", options: ["The Preamble", "The Bill of Rights.", "The Articles", "The Amendments"], answer: 1 },
+        { q: "Which continuous trade route historically connected China and the Mediterranean, allowing for the exchange of goods and culture?", options: ["Trans-Saharan route", "The Silk Road.", "Spice Route", "Oregon Trail"], answer: 1 },
+        { q: "What major event began in 1929 and caused a massive economic downturn worldwide?", options: ["World War I", "The Great Depression.", "Industrial Revolution", "Cold War"], answer: 1 },
+        { q: "What canal, opened in 1914, connects the Atlantic and Pacific Oceans to shorten shipping routes?", options: ["Suez Canal", "Erie Canal", "The Panama Canal.", "Kiel Canal"], answer: 2 }
+    ],
+    6: [
+        { q: "Find the ratio of apples to oranges if you have 4 apples and 12 oranges, written in simplest form.", options: ["1:2", "1:3", "2:3", "4:12"], answer: 1 },
+        { q: "Solve for x: 3x + 5 = 20.", options: ["x = 4", "x = 6", "x = 5.", "x = 15"], answer: 2 },
+        { q: "What is the absolute value of -15?", options: ["-15", "15.", "0", "1"], answer: 1 },
+        { q: "What is 5³ (five cubed)?", options: ["15", "25", "125.", "75"], answer: 2 },
+        { q: "What do we call the middle number in a data set when the numbers are listed in order from least to greatest?", options: ["Mean", "The median.", "Mode", "Range"], answer: 1 },
+        { q: "What is the term for an exaggeration used for emphasis or humor, like 'I've told you a million times'?", options: ["A hyperbole.", "Understatement", "Irony", "Metaphor"], answer: 0 },
+        { q: "In a story, what do we call the main character who faces the central conflict?", options: ["Antagonist", "The protagonist.", "Supporting character", "Narrator"], answer: 1 },
+        { q: "What type of phrase contains a subject and a verb but cannot stand alone as a complete sentence?", options: ["Independent clause", "A dependent clause.", "Prepositional phrase", "Noun phrase"], answer: 1 },
+        { q: "What is the perspective of a story called when the narrator uses pronouns like 'I,' 'me,' and 'we'?", options: ["First-person point of view.", "Second-person", "Third-person limited", "Third-person omniscient"], answer: 0 },
+        { q: "What punctuation mark is used to introduce a list or emphasize a quote?", options: [";", ",", "-", "A colon (:)"], answer: 3 },
+        { q: "What are the tiny, microscopic building blocks that make up all living organisms?", options: ["Atoms", "Cells.", "Molecules", "Tissue"], answer: 1 },
+        { q: "Which organelle is known as the 'powerhouse of the cell' because it generates energy?", options: ["Nucleus", "Ribosome", "The mitochondria.", "Vacuole"], answer: 2 },
+        { q: "What law of physics states that an object at rest stays at rest unless acted upon by an outside force?", options: ["Newton's First Law of Motion (Inertia).", "Newton's Second Law", "Law of Gravity", "Thermodynamics"], answer: 0 },
+        { q: "What type of energy is stored energy waiting to be released, like a rock sitting at the top of a hill?", options: ["Kinetic energy", "Potential energy.", "Thermal energy", "Chemical energy"], answer: 1 },
+        { q: "What scale is used to measure how acidic or basic a liquid substance is?", options: ["Richter scale", "Celsius scale", "The pH scale.", "Barometric scale"], answer: 2 },
+        { q: "What ancient civilization is credited with inventing the concept of democracy?", options: ["The Romans", "The ancient Greeks.", "The Egyptians", "The Persians"], answer: 1 },
+        { q: "What global conflict took place between 1914 and 1918?", options: ["World War II", "Civil War", "World War I.", "Vietnam War"], answer: 2 },
+        { q: "What do historians call the period of European history between the fall of the Roman Empire and the Renaissance?", options: ["The Stone Age", "The Middle Ages (or Medieval Period).", "Bronze Age", "Iron Age"], answer: 1 },
+        { q: "What international organization was formed right after World War II to maintain global peace and security?", options: ["League of Nations", "The United Nations (UN).", "NATO", "European Union"], answer: 1 },
+        { q: "What economic system relies on supply and demand in a free market, where private businesses own property?", options: ["Socialism", "Communism", "Capitalism.", "Feudalism"], answer: 2 }
+    ]
+};
+
+// ==========================================
+// 2. AUTOMATIC GENERATOR ENGINE MECHANICS
+// ==========================================
+
+function generateRandomMath(grade) {
+    let num1, num2, questionText, correctAnswer, wrongAnswers;
+    if (grade === 1) {
+        num1 = Math.floor(Math.random() * 9) + 1; 
+        num2 = Math.floor(Math.random() * 9) + 1; 
+        questionText = `What is ${num1} + ${num2}?`;
+        correctAnswer = num1 + num2;
+        wrongAnswers = [correctAnswer + 1, correctAnswer - 1, correctAnswer + 2];
+    } else if (grade === 2) {
+        num1 = Math.floor(Math.random() * 40) + 10; 
+        num2 = Math.floor(Math.random() * 40) + 10; 
+        questionText = `Solve this: ${num1} + ${num2}`;
+        correctAnswer = num1 + num2;
+        wrongAnswers = [correctAnswer + 10, correctAnswer - 10, correctAnswer + 2];
+    } else if (grade === 3) {
+        num1 = Math.floor(Math.random() * 8) + 2; 
+        num2 = Math.floor(Math.random() * 9) + 1; 
+        questionText = `What is ${num1} × ${num2}?`;
+        correctAnswer = num1 * num2;
+        wrongAnswers = [correctAnswer + num1, correctAnswer - num1, correctAnswer + 2];
+    } else {
+        num1 = Math.floor(Math.random() * 12) + 1;
+        questionText = `Solve for x: x - ${num1} = 10`;
+        correctAnswer = 10 + num1;
+        wrongAnswers = [correctAnswer + 5, correctAnswer - 2, 10];
+    }
+
+    let optionsSet = new Set([correctAnswer]);
+    wrongAnswers.forEach(w => { if (w > 0 && optionsSet.size < 4) optionsSet.add(w); });
+    while(optionsSet.size < 4) { optionsSet.add(correctAnswer + Math.floor(Math.random() * 5) + 3); }
+
+    let shuffledOptions = Array.from(optionsSet).sort(() => Math.random() - 0.5);
+    return { q: questionText, options: shuffledOptions.map(String), answer: shuffledOptions.indexOf(correctAnswer) };
+}
+
+function generateRandomLanguageArts(grade) {
+    const wordBank = [
+        { word: "tall", ans: "short", choices: ["big", "short", "heavy", "long"] },
+        { word: "fast", ans: "slow", choices: ["quick", "slow", "weak", "bright"] },
+        { word: "happy", ans: "sad", choices: ["angry", "sad", "silly", "sleepy"] },
+        { word: "dark", ans: "light", choices: ["black", "light", "cold", "soft"] },
+        { word: "noisy", ans: "quiet", choices: ["loud", "quiet", "clean", "rough"] },
+        { word: "clean", ans: "dirty", choices: ["fresh", "dirty", "old", "smart"] }
+    ];
+    let item = wordBank[Math.floor(Math.random() * wordBank.length)];
+    let questionText = `What is the opposite of the word "${item.word}"?`;
+    let shuffledOptions = [...item.choices].sort(() => Math.random() - 0.5);
+    return { q: questionText, options: shuffledOptions, answer: shuffledOptions.indexOf(item.ans) };
+}
+
+function generateRandomScience(grade) {
+    const groups = [
+        { name: "Ice Cubes", ans: "Solid", choices: ["Solid", "Liquid", "Gas", "Plasma"] },
+        { name: "Orange Juice", ans: "Liquid", choices: ["Solid", "Liquid", "Gas", "Plasma"] },
+        { name: "Steam from a kettle", ans: "Gas", choices: ["Solid", "Liquid", "Gas", "Plasma"] },
+        { name: "A stone block", ans: "Solid", choices: ["Solid", "Liquid", "Gas", "Plasma"] }
+    ];
+    let item = groups[Math.floor(Math.random() * groups.length)];
+    let questionText = `Which state of matter does "${item.name}" belong to?`;
+    return { q: questionText, options: item.choices, answer: item.choices.indexOf(item.ans) };
+}
+
+// ==========================================
+// 3. GAME RUNTIME CONTROL VARIABLES & LOGIC
+// ==========================================
+let currentQuestions = [];
+let currentQuestionIndex = 0;
+let userScore = 0;
+let activeGrade = 1;
+let playerName = "Anonymous";
+
+function startTest(gradeNum) {
+    let nameInput = document.getElementById("player-name").value.trim();
+    playerName = nameInput || "Anonymous"; 
+    activeGrade = gradeNum;
+    
+    let pool = [...(testDatabase[gradeNum] || [])];
+    
+    for (let i = 0; i < 4; i++) { pool.push(generateRandomMath(gradeNum)); }
+    for (let i = 0; i < 3; i++) { pool.push(generateRandomLanguageArts(gradeNum)); }
+    for (let i = 0; i < 3; i++) { pool.push(generateRandomScience(gradeNum)); }
+    
+    let shuffledPool = pool.sort(() => Math.random() - 0.5);
+    currentQuestions = shuffledPool.slice(0, 20);
+    
+    currentQuestionIndex = 0;
+    userScore = 0;
+    
+    document.getElementById("arena-title").innerText = `Grade ${gradeNum} Quest! 🧩`;
+    document.getElementById("grade-selection").classList.add("hidden");
+    document.getElementById("test-arena").classList.remove("hidden");
+    
+    showQuestion();
+}
+
+function showQuestion() {
+    document.getElementById("next-btn").classList.add("hidden");
+    let qData = currentQuestions[currentQuestionIndex];
+    
+    let progressPercent = (currentQuestionIndex / currentQuestions.length) * 100;
+    document.getElementById("progress-bar").style.width = `${progressPercent}%`;
+
+    document.getElementById("question-text").innerText = qData.q;
+    
+    let optionsContainer = document.getElementById("options-container");
+    optionsContainer.innerHTML = "";
+    
+    qData.options.forEach((opt, idx) => {
+        let btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.innerText = opt;
+        btn.onclick = () => selectAnswer(btn, idx, qData.answer);
+        optionsContainer.appendChild(btn);
+    });
+}
+
+function selectAnswer(selectedBtn, chosenIdx, correctIdx) {
+    let allButtons = document.querySelectorAll(".option-btn");
+    allButtons.forEach(btn => btn.disabled = true);
+
+    if (chosenIdx === correctIdx) {
+        selectedBtn.classList.add("correct");
+        userScore++;
+    } else {
+        selectedBtn.classList.add("wrong");
+        allButtons[correctIdx].classList.add("correct");
+    }
+    document.getElementById("next-btn").classList.remove("hidden");
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < currentQuestions.length) {
+        showQuestion();
+    } else {
+        document.getElementById("test-arena").classList.add("hidden");
+        document.getElementById("score-screen").classList.remove("hidden");
+        
+        document.getElementById("display-player-name").innerText = playerName;
+        document.getElementById("final-score").innerText = userScore;
+        document.getElementById("total-score").innerText = currentQuestions.length;
+        
+        saveHighScore(playerName, activeGrade, userScore);
+        displayLeaderboard();
+    }
+}
+
+// ==========================================
+// 4. LEADERBOARD STORAGE MECHANICS
+// ==========================================
+function saveHighScore(name, grade, score) {
+    let leaderboard = JSON.parse(localStorage.getItem("eduquest_leaderboard")) || [];
+    leaderboard.push({ name: name, grade: grade, score: score, date: new Date().toLocaleDateString() });
+    leaderboard.sort((a, b) => b.score - a.score);
+    leaderboard = leaderboard.slice(0, 10);
+    localStorage.setItem("eduquest_leaderboard", JSON.stringify(leaderboard));
+}
+
+function displayLeaderboard() {
+    let leaderboard = JSON.parse(localStorage.getItem("eduquest_leaderboard")) || [];
+    let tbody = document.getElementById("leaderboard-body");
+    tbody.innerHTML = ""; 
+    
+    if(leaderboard.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="padding:10px; text-align:center;">No high scores yet! Be the first!</td></tr>`;
+        return;
+    }
+
+    leaderboard.forEach((entry, index) => {
+        let row = document.createElement("tr");
+        row.style.borderBottom = "1px solid #ced6e0";
+        
+        let rankBadge = index + 1;
+        if(rankBadge === 1) rankBadge = "🥇";
+        if(rankBadge === 2) rankBadge = "🥈";
+        if(rankBadge === 3) rankBadge = "🥉";
+
+        row.innerHTML = `
+            <td style="padding: 10px; font-weight: bold; text-align:center;">${rankBadge}</td>
+            <td style="padding: 10px; text-align:left;">${entry.name}</td>
+            <td style="padding: 10px; text-align:center; color: #6c5ce7;">Grade ${entry.grade}</td>
+            <td style="padding: 10px; text-align:center; font-weight: bold; color: #2d3436;">${entry.score}/20</td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+function goBack() {
+    document.getElementById("test-arena").classList.add("hidden");
+    document.getElementById("score-screen").classList.add("hidden");
+    document.getElementById("grade-selection").classList.remove("hidden");
+    document.getElementById("player-name").value = ""; 
+}
